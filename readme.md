@@ -11,6 +11,22 @@ Navigator: Likhita Madiraju
 
 Test driven development for PID controller
 
+## Class Diagram
+
+<p align="center">
+<a target="_blank"><img src="https://github.com/ajeetwankhede/TDD9-PID-Controller/Class%20Diagram.jpg" 
+alt="NMPC" width="480" height="360" border="10" />
+</a>
+</p>
+
+## Activity Diagram
+
+<p align="center">
+<a target="_blank"><img src="https://raw.githubusercontent.com/ajeetwankhede/TDD9-PID-Controller/Activity%20Diagram.jpg" 
+alt="NMPC" width="480" height="640" border="10" />
+</a>
+</p>
+
 ## Standard install via command-line
 ```
 git clone --recursive https://github.com/ajeetwankhede/TDD9-PID-Controller
