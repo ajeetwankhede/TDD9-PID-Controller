@@ -26,7 +26,7 @@ PIDController::PIDController() {
   kp = 1;
   ki = 1;
   kd = 1;
-  waitTime = 0.1;
+  waitTime = -0.1;
   velocity = 0;
   errorSum = 0;
   errorPrevious = 0;
