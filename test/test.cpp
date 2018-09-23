@@ -19,12 +19,12 @@
 
 std::shared_ptr<PIDController> testObject;
 
-TEST(PIDController, calculateErrorTest) {
-  testObject = std::make_shared<PIDController>();
-  ASSERT_EQ(2.0, testObject->calculateError(50.0, 1.0));
-}
-
 TEST(PIDController, calculateVelocityTest) {
   testObject = std::make_shared<PIDController>();
-  ASSERT_EQ(0.0, testObject->calculateVelocity());
+  ASSERT_EQ(0.0, testObject->calculateVelocity(10.0, 1.0));
+}
+
+TEST(PIDController, waitTimeTest) {
+  testObject = std::make_shared<PIDController>();
+  ASSERT_LT(0.0, testObject->waitTime);
 }

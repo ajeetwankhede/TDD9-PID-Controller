@@ -21,11 +21,12 @@ class PIDController {
   // Declaration of PID parameters
   double kp, ki, kd;
   // Declaration of error and time step
-  double error, dt;
+  double errorSum, errorPrevious;
   // Declaration of current velocity
   double velocity;
 
  public:
+  double waitTime;
   /**
    *   @brief Default constructor for PIDController with kp, ki, and kd initialized to random values
    *
@@ -46,32 +47,24 @@ class PIDController {
    *   @param double value of proportional gain (kp)
    *   @param double value of integral gain (ki)
    *   @param double value of differential gain (kd)
-   *   @param double value of time step (dt)
+   *   @param double value of time step (waitTime)
    *   @return none
    */
   void chnageParameters(double, double, double, double);
   /**
-   *   @brief Use this function to display the current values of PID parameters kp, ki, and kd, and time step dt
+   *   @brief Use this function to display the current values of PID parameters kp, ki, and kd, and time step (waitTime)
    *
    *   @param none
    *   @return none
    */
   void displayParameters();
   /**
-   *   @brief Use this function to calculate the error between desired velocity and current velocity
-   *
+   *   @brief Use this function to calculate the current velocity from the errors and PID parameters
    *   @param double value of desired velocity
    *   @param double value of current velocity
-   *   @return double value of error
-   */
-  double calculateError(double, double);
-  /**
-   *   @brief Use this function to calculate the current velocity from the error and PID parameters
-   *
-   *   @param none
    *   @return double value of current velocity
    */
-  double calculateVelocity();
+  double calculateVelocity(double, double);
 };
 
 #endif  // INCLUDE_PIDCONTROLLER_HPP_

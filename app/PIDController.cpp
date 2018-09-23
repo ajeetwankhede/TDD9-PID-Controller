@@ -26,9 +26,10 @@ PIDController::PIDController() {
   kp = 1;
   ki = 1;
   kd = 1;
-  dt = 0.1;
+  waitTime = 0.1;
   velocity = 0;
-  error = 0;
+  errorSum = 0;
+  errorPrevious = 0;
 }
 
 /**
@@ -52,12 +53,12 @@ PIDController::~PIDController() {
  *   @return none
  */
 void PIDController::chnageParameters(double kp, double ki, double kd,
-                                     double dt) {
-  // TODO(ajeetwankhede) change the values of kp, ki, kd, and dt
+                                     double waitTime) {
+  // TODO(ajeetwankhede) change the values of kp, ki, kd, and waitTime
 }
 
 /**
- *   @brief Use this function to display the current values of PID parameters kp, ki, and kd, and time step dt
+ *   @brief Use this function to display the current values of PID parameters kp, ki, and kd, and time step (waitTime)
  *
  *   @param none
  *   @return none
@@ -66,17 +67,6 @@ void PIDController::displayParameters() {
   // TODO(ajeetwankhede) display the PID parameters kp, ki, kd
 }
 
-/**
- *   @brief Use this function to calculate the error between desired velocity and current velocity
- *
- *   @param double value of desired velocity
- *   @param double value of current velocity
- *   @return double value of error
- */
-double PIDController::calculateError(double setVelocity, double velocity) {
-  // TODO(ajeetwankhede) calculate the error and return it
-  return 100.0;
-}
 
 /**
  *   @brief Use this function to calculate the current velocity from the error and PID parameters
@@ -84,7 +74,7 @@ double PIDController::calculateError(double setVelocity, double velocity) {
  *   @param none
  *   @return double value of current velocity
  */
-double PIDController::calculateVelocity() {
+double PIDController::calculateVelocity(double setVelocity, double velocity) {
   // TODO(ajeetwankhede) calculate the current velocity
   return 10.0;
 }
