@@ -3,6 +3,10 @@
 [![Coverage Status](https://coveralls.io/repos/github/ajeetwankhede/cpp-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/ajeetwankhede/cpp-boilerplate?branch=master)
 ---
 
+## Author Name for Part 1
+Driver: Ajeet Wankhede
+Navigator: Likhita Madiraju
+
 ## Overview
 
 Simple starter C++ project with:
