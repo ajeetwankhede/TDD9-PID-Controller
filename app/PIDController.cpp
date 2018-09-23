@@ -23,13 +23,13 @@
  */
 PIDController::PIDController() {
   // TODO(ajeetwankhede) Auto-generated constructor stub
-  kp = 1;
-  ki = 1;
-  kd = 1;
+  kp = 1.0;
+  ki = 1.0;
+  kd = 1.0;
   waitTime = -0.1;
-  velocity = 0;
-  errorSum = 0;
-  errorPrevious = 0;
+  velocity = 0.0;
+  errorSum = 0.0;
+  errorPrevious = 0.0;
 }
 
 /**
@@ -72,9 +72,13 @@ void PIDController::displayParameters() {
  *   @brief Use this function to calculate the current velocity from the error and PID parameters
  *
  *   @param none
- *   @return double value of current velocity
+ *   @return double value of new current velocity
  */
-double PIDController::calculateVelocity(double setVelocity, double velocity) {
-  // TODO(ajeetwankhede) calculate the current velocity
-  return 10.0;
+double PIDController::calculateVelocity(double setVelocity,
+                                        double currentVelocity) {
+  // TODO(ajeetwankhede) 1. Find errorP = setVelocity - currentVelocity
+  // 2. Find errorSum + = errorP
+  // 3. Find errorD = errorP - errorPrevious
+  // 4. Return current velocity += kp*errorP + ki*errorSum + kd*errorD;
+  return 5.2;
 }
