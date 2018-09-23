@@ -1,6 +1,6 @@
 # C++ Boilerplate
-[![Build Status](https://travis-ci.org/ajeetwankhede/cpp-boilerplate.svg?branch=master)](https://travis-ci.org/ajeetwankhede/cpp-boilerplate)
-[![Coverage Status](https://coveralls.io/repos/github/ajeetwankhede/cpp-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/ajeetwankhede/cpp-boilerplate?branch=master)
+[![Build Status](https://travis-ci.org/ajeetwankhede/TDD9-PID-Controller.svg?branch=master)](https://travis-ci.org/ajeetwankhede/TDD9-PID-Controller)
+[![Coverage Status](https://coveralls.io/repos/github/ajeetwankhede/TDD9-PID-Controller/badge.svg?branch=master)](https://coveralls.io/github/ajeetwankhede/TDD9-PID-Controller?branch=master)
 ---
 
 ## Author Name for Part 1
