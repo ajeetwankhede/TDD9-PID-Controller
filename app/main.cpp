@@ -13,34 +13,34 @@
  *  robot product development at Acme Robotics
  *
  */
-#include "PIDController.hpp"
 #include <iostream>
+#include "PIDController.hpp"
 
 int main() {
-  PIDController PID;
-  double offset = 0.1;
-  double setVelocity = 5.0;
-  double currentVelocity = 1.0;
-  double kp = 1.0;
-  double ki = 1.0;
-  double kd = 1.0;
-  double waitTime = 0.1;
+  PIDController PID;  //  Create object of class PIDController
+  double offset = 0.1;  //  initialize offset between velocities
+  double setVelocity = 5.0;  // initialize desired set velocity
+  double currentVelocity = 1.0;  // initialize current velocity
+  double kp = 0.4;
+  double ki = 0.2;
+  double kd = 0.4;
+  double waitTime = 0.0;
+  //  Get values of kp, ki, kd, waitTime from user
+  std::cout << "Enter Kp, Ki, Kd and wait"
+      " time in order with a space between them" << std::endl;
+  std::cin >> kp >> ki >> kd >> waitTime;
 
-  std::cout << "Set Kp values" << std::endl;
-  std::cin >> kp;
-  std::cout << "Set Ki values" << std::endl;
-  std::cin >> ki;
-  std::cout << "Set Kd values" << std::endl;
-  std::cin >> kd;
-  std::cout << "Set wait time values" << std::endl;
-  std::cin >> waitTime;
+  //  Set kp, ki, kd, waitTime taken from user
+  PID.chnageParameters(kp, ki, kd, waitTime);
 
-  PID.chnageParameters(kp,ki,kd,waitTime);
+  //  Running PID control on velocity and ensuring
+  //  convergence below required offset
   while (abs(currentVelocity - setVelocity) > offset) {
-  currentVelocity = PID.calculateVelocity(setVelocity,currentVelocity);
-  std::cout <<"Error in velocity is "<<abs(currentVelocity - setVelocity)<<std::endl;
-}
-  //std::cout << testObject->displayParameters() << std::endl;
+    currentVelocity = PID.calculateVelocity(setVelocity, currentVelocity);
+    std::cout << "Error in velocity is " << abs(currentVelocity - setVelocity)
+        << std::endl;
+  }
+  //  Display Parameters of kp, ki, kd, waitTime which were used for computing
   PID.displayParameters();
   return 0;
 }
