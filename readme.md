@@ -7,9 +7,21 @@
 Driver: Ajeet Wankhede
 Navigator: Likhita Madiraju
 
+## Author Name for Part 2
+Driver: Harsh Kakashaniya
+Navigator: Rohith Jayarajan
+
 ## Overview
 
 Test driven development for PID controller
+
+## Group Discussion notes
+1.The implementation and test passing satisfy the original class design.
+
+## TODO
+1.Test suite for more coverages.
+2. Bump test can be integrated(This test will use two convergence test in opposite direction).
+To check if PID controller converges in given time.
 
 ## Standard install via command-line
 ```
