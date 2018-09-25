@@ -87,6 +87,6 @@ double PIDController::calculateVelocity(double setVelocity,
     double errorD = errorP - errorPrevious;  //  Compute Differential error
     currentVelocity += kp*errorP
         + ki*errorSum + kd*errorD;  //  Compute Current velocity
-    errorPrevious=errorP;
+    errorPrevious = errorP;
     return currentVelocity;
 }
