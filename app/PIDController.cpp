@@ -14,7 +14,7 @@
  */
 
 #include "PIDController.hpp"
-
+#include <iostream>
 /**
  *   @brief Default constructor for PIDController with kp, ki, and kd initialized to random values
  *
@@ -22,11 +22,10 @@
  *   @return nothing
  */
 PIDController::PIDController() {
-  // TODO(ajeetwankhede) Auto-generated constructor stub
-  kp = 1.0;
-  ki = 1.0;
-  kd = 1.0;
-  waitTime = -0.1;
+  kp = 0.4;
+  ki = 0.2;
+  kd = 0.4;
+  waitTime = 1;
   velocity = 0.0;
   errorSum = 0.0;
   errorPrevious = 0.0;
@@ -52,9 +51,12 @@ PIDController::~PIDController() {
  *   @param double value of time step (dt)
  *   @return none
  */
-void PIDController::chnageParameters(double kp, double ki, double kd,
-                                     double waitTime) {
-  // TODO(ajeetwankhede) change the values of kp, ki, kd, and waitTime
+void PIDController::chnageParameters(double kp1, double ki1, double kd1,
+                                     double waitTime1) {
+  kp = kp1;  //  Set proportional gain (kp)
+  ki = ki1;  //  Set integral gain (ki)
+  kd = kd1;  //  Set differential gain (kd)
+  waitTime = waitTime1;  //  time step (dt)
 }
 
 /**
@@ -64,7 +66,10 @@ void PIDController::chnageParameters(double kp, double ki, double kd,
  *   @return none
  */
 void PIDController::displayParameters() {
-  // TODO(ajeetwankhede) display the PID parameters kp, ki, kd
+  //  Display kp, ki, kd parameters
+  std::cout << "Proportional constant is : " << kp << std::endl;
+  std::cout << "Integral constant is : " << ki << std::endl;
+  std::cout << "Differential constant is : " << kd << std::endl;
 }
 
 
@@ -76,9 +81,12 @@ void PIDController::displayParameters() {
  */
 double PIDController::calculateVelocity(double setVelocity,
                                         double currentVelocity) {
-  // TODO(ajeetwankhede) 1. Find errorP = setVelocity - currentVelocity
-  // 2. Find errorSum + = errorP
-  // 3. Find errorD = errorP - errorPrevious
-  // 4. Return current velocity += kp*errorP + ki*errorSum + kd*errorD;
-  return 5.2;
+    double errorP =
+    setVelocity - currentVelocity;  // Compute proportional error
+    errorSum = errorSum + errorP;  //  Compute accumulated error
+    double errorD = errorP - errorPrevious;  //  Compute Differential error
+    currentVelocity += kp*errorP
+        + ki*errorSum + kd*errorD;  //  Compute Current velocity
+    errorPrevious = errorP;
+    return currentVelocity;
 }
